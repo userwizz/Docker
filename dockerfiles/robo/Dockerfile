@@ -1,3 +1,4 @@
+# Base image (check e.g. https://hub.docker.com/explore/)
 FROM alpine:3.7
 LABEL name="Robot Framework + Selenium + Firefox"
 
