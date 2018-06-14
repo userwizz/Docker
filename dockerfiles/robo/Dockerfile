@@ -27,6 +27,8 @@ RUN pip install --upgrade pip && \
 
 # Copy script and driver
 COPY . /app/
+RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.17.0/geckodriver-v0.17.0-linux64.tar.gz /app/.
+RUN gunzip /app/geckodriver-v0.17.0-linux64.tar.gz && tar xfv /app/geckodriver-v0.17.0-linux64.tar
 RUN chmod 755 /app/*
 
 # Add files to path
