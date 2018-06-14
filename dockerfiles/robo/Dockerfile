@@ -26,10 +26,10 @@ RUN pip install --upgrade pip && \
     robotframework-seleniumlibrary==$SELENIUM_LIBRARY_VERSION
 
 # Copy script and driver
-COPY . /app/
+COPY run.sh /app/.
 RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.17.0/geckodriver-v0.17.0-linux64.tar.gz -P /app/
-RUN gunzip /app/geckodriver-v0.17.0-linux64.tar.gz && tar xfv /app/geckodriver-v0.17.0-linux64.tar
-RUN chmod 755 /app/*
+RUN gunzip /app/geckodriver-v0.17.0-linux64.tar.gz && cd /app/ && tar xfv /app/geckodriver-v0.17.0-linux64.tar
+RUN rm /app/geckodriver-v0.17.0-linux64.tar && chmod 755 /app/*
 
 # Add files to path
 ENV PATH=/app:$PATH
