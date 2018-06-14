@@ -10,6 +10,8 @@ ENV SCREEN_WIDTH 1920
 # Python depency versions
 ENV ROBOT_FRAMEWORK_VERSION 3.0.4
 ENV SELENIUM_LIBRARY_VERSION 3.1.1
+ENV REQUESTS_LIBRARY_VERSION 0.4.7
+ENV HTTP_LIBRARY_VERSION 0.4.2
 
 # Install needed packages
 RUN apk update && \
@@ -23,7 +25,9 @@ RUN apk update && \
 RUN pip install --upgrade pip && \
     pip install --no-cache \
     robotframework==$ROBOT_FRAMEWORK_VERSION \
-    robotframework-seleniumlibrary==$SELENIUM_LIBRARY_VERSION
+    robotframework-seleniumlibrary==$SELENIUM_LIBRARY_VERSION \
+    robotframework-httplibrary==$HTTP_LIBRARY_VERSION \
+    robotframework-requests==$REQUESTS_LIBRARY_VERSION
 
 # Copy script and driver
 WORKDIR /app
