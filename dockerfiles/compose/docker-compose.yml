@@ -1,0 +1,10 @@
+version: '3.0'
+
+services:
+    data-service:
+        build: ./data_service
+        volumes:
+            - ./data_service:/usr/src/app
+        ports:
+            - 5001:80
+
