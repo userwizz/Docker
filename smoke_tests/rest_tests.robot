@@ -1,6 +1,5 @@
 *** Settings ***
 Resource    ../res/resources.robot
-Variables    ../res/variables.py
 
 Suite Setup    Create a new HTTP session
 Suite Teardown    Delete All Sessions
