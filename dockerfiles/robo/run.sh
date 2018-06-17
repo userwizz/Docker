@@ -9,4 +9,8 @@ git clone "$1" repo
 
 # run tests
 cd repo
-robot "$2"
+if [ -z "$3" ]; then
+    robot "$2"
+else
+	robot "$2" "$3"
+fi

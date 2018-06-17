@@ -7,4 +7,8 @@ services:
             - ./data_service:/usr/src/app
         ports:
             - 5001:80
-
+    robo-runner:
+        image: roboseleniumff
+        depends_on: 
+            - data-service
+        command: https://github.com/userwizz/Docker.git -vBASE_URL:http://data-service:80 smoke_tests/rest_tests.robot
